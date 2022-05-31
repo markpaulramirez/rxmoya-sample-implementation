@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import RxMoya
+import RxSwift
+import Moya
 
-class ViewController: UIViewController {
+class ToDoListViewController: UIViewController {
 
+    let viewModel = ToDoListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewModel.fetchAllToDo().subscribe()
     }
-
-
 }
 
